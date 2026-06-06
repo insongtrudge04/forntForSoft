@@ -1,0 +1,418 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 900">
+  <style>
+    .box { fill:#fff; stroke:#333; stroke-width:2; rx:6; }
+    .header { fill:#1a1a2e; }
+    .header-text { fill:#fff; font:bold 14px monospace; }
+    .field { fill:#f8f9fa; }
+    .field-text { fill:#333; font:12px monospace; }
+    .pk { fill:#e74c3c; font:10px monospace; }
+    .fk { fill:#3498db; font:10px monospace; }
+    .edge { stroke:#999; stroke-width:1.5; fill:none; }
+    .edge-label { fill:#666; font:10px monospace; }
+  </style>
+  <line x1="320" y1="135" x2="400" y2="135" class="edge"/>
+  <line x1="320" y1="135" x2="720" y2="135" class="edge"/>
+  <line x1="320" y1="135" x2="720" y2="345" class="edge"/>
+  <line x1="320" y1="135" x2="80" y2="555" class="edge"/>
+  <line x1="320" y1="135" x2="400" y2="555" class="edge"/>
+  <line x1="640" y1="135" x2="80" y2="345" class="edge"/>
+  <line x1="320" y1="345" x2="400" y2="345" class="edge"/>
+  <line x1="320" y1="345" x2="720" y2="345" class="edge"/>
+  <line x1="320" y1="345" x2="80" y2="555" class="edge"/>
+  <line x1="320" y1="345" x2="400" y2="555" class="edge"/>
+  <line x1="320" y1="345" x2="720" y2="555" class="edge"/>
+  <rect x="80" y="60" width="240" height="282" class="box"/>
+  <rect x="80" y="60" width="240" height="30" class="header" rx="6"/>
+  <rect x="80" y="84" width="240" height="6" class="header"/>
+  <text x="200" y="80" text-anchor="middle" class="header-text">User</text>
+  <rect x="84" y="98" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="112" class="field-text">🔑 id</text>
+  <text x="310" y="112" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="120" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="134" class="field-text">🔑 clerkId</text>
+  <text x="310" y="134" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="142" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="156" class="field-text">email</text>
+  <text x="310" y="156" text-anchor="end" class="field-text">String</text>
+  <rect x="84" y="164" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="178" class="field-text">role</text>
+  <text x="310" y="178" text-anchor="end" class="field-text">UserRole</text>
+  <rect x="84" y="186" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="200" class="field-text">createdAt</text>
+  <text x="310" y="200" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="84" y="208" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="222" class="field-text">updatedAt</text>
+  <text x="310" y="222" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="84" y="230" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="244" class="field-text">artistProfile</text>
+  <text x="310" y="244" text-anchor="end" class="field-text">ArtistProfile?</text>
+  <rect x="84" y="252" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="266" class="field-text">buyerProfile</text>
+  <text x="310" y="266" text-anchor="end" class="field-text">BuyerProfile?</text>
+  <rect x="84" y="274" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="288" class="field-text">orders</text>
+  <text x="310" y="288" text-anchor="end" class="field-text">Order</text>
+  <rect x="84" y="296" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="310" class="field-text">savedWorks</text>
+  <text x="310" y="310" text-anchor="end" class="field-text">SavedWork</text>
+  <rect x="84" y="318" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="332" class="field-text">offers</text>
+  <text x="310" y="332" text-anchor="end" class="field-text">Offer</text>
+  <rect x="400" y="60" width="240" height="370" class="box"/>
+  <rect x="400" y="60" width="240" height="30" class="header" rx="6"/>
+  <rect x="400" y="84" width="240" height="6" class="header"/>
+  <text x="520" y="80" text-anchor="middle" class="header-text">ArtistProfile</text>
+  <rect x="404" y="98" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="112" class="field-text">🔑 id</text>
+  <text x="630" y="112" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="120" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="134" class="field-text">🔑 userId</text>
+  <text x="630" y="134" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="142" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="156" class="field-text">user</text>
+  <text x="630" y="156" text-anchor="end" class="field-text">User</text>
+  <rect x="404" y="164" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="178" class="field-text">slug</text>
+  <text x="630" y="178" text-anchor="end" class="field-text">String</text>
+  <rect x="404" y="186" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="200" class="field-text">displayName</text>
+  <text x="630" y="200" text-anchor="end" class="field-text">String</text>
+  <rect x="404" y="208" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="222" class="field-text">bio</text>
+  <text x="630" y="222" text-anchor="end" class="field-text">String?</text>
+  <rect x="404" y="230" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="244" class="field-text">avatarUrl</text>
+  <text x="630" y="244" text-anchor="end" class="field-text">String?</text>
+  <rect x="404" y="252" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="266" class="field-text">website</text>
+  <text x="630" y="266" text-anchor="end" class="field-text">String?</text>
+  <rect x="404" y="274" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="288" class="field-text">instagramHandle</text>
+  <text x="630" y="288" text-anchor="end" class="field-text">String?</text>
+  <rect x="404" y="296" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="310" class="field-text">🔑 stripeAccountId</text>
+  <text x="630" y="310" text-anchor="end" class="pk">String?</text>
+  <rect x="404" y="318" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="332" class="field-text">stripeOnboarded</text>
+  <text x="630" y="332" text-anchor="end" class="field-text">Boolean</text>
+  <rect x="404" y="340" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="354" class="field-text">status</text>
+  <text x="630" y="354" text-anchor="end" class="field-text">ArtistStatus</text>
+  <rect x="404" y="362" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="376" class="field-text">createdAt</text>
+  <text x="630" y="376" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="404" y="384" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="398" class="field-text">updatedAt</text>
+  <text x="630" y="398" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="404" y="406" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="420" class="field-text">artworks</text>
+  <text x="630" y="420" text-anchor="end" class="field-text">Artwork</text>
+  <rect x="720" y="60" width="240" height="326" class="box"/>
+  <rect x="720" y="60" width="240" height="30" class="header" rx="6"/>
+  <rect x="720" y="84" width="240" height="6" class="header"/>
+  <text x="840" y="80" text-anchor="middle" class="header-text">BuyerProfile</text>
+  <rect x="724" y="98" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="112" class="field-text">🔑 id</text>
+  <text x="950" y="112" text-anchor="end" class="pk">String</text>
+  <rect x="724" y="120" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="134" class="field-text">🔑 userId</text>
+  <text x="950" y="134" text-anchor="end" class="pk">String</text>
+  <rect x="724" y="142" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="156" class="field-text">user</text>
+  <text x="950" y="156" text-anchor="end" class="field-text">User</text>
+  <rect x="724" y="164" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="178" class="field-text">displayName</text>
+  <text x="950" y="178" text-anchor="end" class="field-text">String</text>
+  <rect x="724" y="186" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="200" class="field-text">avatarUrl</text>
+  <text x="950" y="200" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="208" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="222" class="field-text">shippingLine1</text>
+  <text x="950" y="222" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="230" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="244" class="field-text">shippingLine2</text>
+  <text x="950" y="244" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="252" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="266" class="field-text">shippingCity</text>
+  <text x="950" y="266" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="274" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="288" class="field-text">shippingState</text>
+  <text x="950" y="288" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="296" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="310" class="field-text">shippingPostal</text>
+  <text x="950" y="310" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="318" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="332" class="field-text">shippingCountry</text>
+  <text x="950" y="332" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="340" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="354" class="field-text">createdAt</text>
+  <text x="950" y="354" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="724" y="362" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="376" class="field-text">updatedAt</text>
+  <text x="950" y="376" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="80" y="270" width="240" height="612" class="box"/>
+  <rect x="80" y="270" width="240" height="30" class="header" rx="6"/>
+  <rect x="80" y="294" width="240" height="6" class="header"/>
+  <text x="200" y="290" text-anchor="middle" class="header-text">Artwork</text>
+  <rect x="84" y="308" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="322" class="field-text">🔑 id</text>
+  <text x="310" y="322" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="330" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="344" class="field-text">slug</text>
+  <text x="310" y="344" text-anchor="end" class="field-text">String</text>
+  <rect x="84" y="352" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="366" class="field-text">title</text>
+  <text x="310" y="366" text-anchor="end" class="field-text">String</text>
+  <rect x="84" y="374" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="388" class="field-text">description</text>
+  <text x="310" y="388" text-anchor="end" class="field-text">String?</text>
+  <rect x="84" y="396" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="410" class="field-text">medium</text>
+  <text x="310" y="410" text-anchor="end" class="field-text">Medium</text>
+  <rect x="84" y="418" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="432" class="field-text">width</text>
+  <text x="310" y="432" text-anchor="end" class="field-text">Float?</text>
+  <rect x="84" y="440" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="454" class="field-text">height</text>
+  <text x="310" y="454" text-anchor="end" class="field-text">Float?</text>
+  <rect x="84" y="462" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="476" class="field-text">depth</text>
+  <text x="310" y="476" text-anchor="end" class="field-text">Float?</text>
+  <rect x="84" y="484" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="498" class="field-text">dimensionUnit</text>
+  <text x="310" y="498" text-anchor="end" class="field-text">String</text>
+  <rect x="84" y="506" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="520" class="field-text">year</text>
+  <text x="310" y="520" text-anchor="end" class="field-text">Int?</text>
+  <rect x="84" y="528" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="542" class="field-text">price</text>
+  <text x="310" y="542" text-anchor="end" class="field-text">Decimal</text>
+  <rect x="84" y="550" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="564" class="field-text">editionType</text>
+  <text x="310" y="564" text-anchor="end" class="field-text">EditionType</text>
+  <rect x="84" y="572" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="586" class="field-text">editionTotal</text>
+  <text x="310" y="586" text-anchor="end" class="field-text">Int?</text>
+  <rect x="84" y="594" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="608" class="field-text">editionNumber</text>
+  <text x="310" y="608" text-anchor="end" class="field-text">Int?</text>
+  <rect x="84" y="616" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="630" class="field-text">status</text>
+  <text x="310" y="630" text-anchor="end" class="field-text">ArtworkStatus</text>
+  <rect x="84" y="638" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="652" class="field-text">isFeatured</text>
+  <text x="310" y="652" text-anchor="end" class="field-text">Boolean</text>
+  <rect x="84" y="660" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="674" class="field-text">viewCount</text>
+  <text x="310" y="674" text-anchor="end" class="field-text">Int</text>
+  <rect x="84" y="682" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="696" class="field-text">🔑 artistId</text>
+  <text x="310" y="696" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="704" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="718" class="field-text">artist</text>
+  <text x="310" y="718" text-anchor="end" class="field-text">ArtistProfile</text>
+  <rect x="84" y="726" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="740" class="field-text">createdAt</text>
+  <text x="310" y="740" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="84" y="748" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="762" class="field-text">updatedAt</text>
+  <text x="310" y="762" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="84" y="770" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="784" class="field-text">images</text>
+  <text x="310" y="784" text-anchor="end" class="field-text">ArtworkImage</text>
+  <rect x="84" y="792" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="806" class="field-text">orders</text>
+  <text x="310" y="806" text-anchor="end" class="field-text">Order</text>
+  <rect x="84" y="814" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="828" class="field-text">savedBy</text>
+  <text x="310" y="828" text-anchor="end" class="field-text">SavedWork</text>
+  <rect x="84" y="836" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="850" class="field-text">offers</text>
+  <text x="310" y="850" text-anchor="end" class="field-text">Offer</text>
+  <rect x="84" y="858" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="872" class="field-text">viewEvents</text>
+  <text x="310" y="872" text-anchor="end" class="field-text">ArtworkViewEvent</text>
+  <rect x="400" y="270" width="240" height="216" class="box"/>
+  <rect x="400" y="270" width="240" height="30" class="header" rx="6"/>
+  <rect x="400" y="294" width="240" height="6" class="header"/>
+  <text x="520" y="290" text-anchor="middle" class="header-text">ArtworkImage</text>
+  <rect x="404" y="308" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="322" class="field-text">🔑 id</text>
+  <text x="630" y="322" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="330" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="344" class="field-text">🔑 artworkId</text>
+  <text x="630" y="344" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="352" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="366" class="field-text">artwork</text>
+  <text x="630" y="366" text-anchor="end" class="field-text">Artwork</text>
+  <rect x="404" y="374" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="388" class="field-text">url</text>
+  <text x="630" y="388" text-anchor="end" class="field-text">String</text>
+  <rect x="404" y="396" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="410" class="field-text">🔑 publicId</text>
+  <text x="630" y="410" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="418" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="432" class="field-text">order</text>
+  <text x="630" y="432" text-anchor="end" class="field-text">Int</text>
+  <rect x="404" y="440" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="454" class="field-text">width</text>
+  <text x="630" y="454" text-anchor="end" class="field-text">Int?</text>
+  <rect x="404" y="462" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="476" class="field-text">height</text>
+  <text x="630" y="476" text-anchor="end" class="field-text">Int?</text>
+  <rect x="720" y="270" width="240" height="458" class="box"/>
+  <rect x="720" y="270" width="240" height="30" class="header" rx="6"/>
+  <rect x="720" y="294" width="240" height="6" class="header"/>
+  <text x="840" y="290" text-anchor="middle" class="header-text">Order</text>
+  <rect x="724" y="308" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="322" class="field-text">🔑 id</text>
+  <text x="950" y="322" text-anchor="end" class="pk">String</text>
+  <rect x="724" y="330" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="344" class="field-text">🔑 buyerId</text>
+  <text x="950" y="344" text-anchor="end" class="pk">String</text>
+  <rect x="724" y="352" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="366" class="field-text">buyer</text>
+  <text x="950" y="366" text-anchor="end" class="field-text">User</text>
+  <rect x="724" y="374" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="388" class="field-text">🔑 artworkId</text>
+  <text x="950" y="388" text-anchor="end" class="pk">String</text>
+  <rect x="724" y="396" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="410" class="field-text">artwork</text>
+  <text x="950" y="410" text-anchor="end" class="field-text">Artwork</text>
+  <rect x="724" y="418" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="432" class="field-text">status</text>
+  <text x="950" y="432" text-anchor="end" class="field-text">OrderStatus</text>
+  <rect x="724" y="440" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="454" class="field-text">subtotal</text>
+  <text x="950" y="454" text-anchor="end" class="field-text">Decimal</text>
+  <rect x="724" y="462" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="476" class="field-text">platformFee</text>
+  <text x="950" y="476" text-anchor="end" class="field-text">Decimal</text>
+  <rect x="724" y="484" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="498" class="field-text">artistPayout</text>
+  <text x="950" y="498" text-anchor="end" class="field-text">Decimal</text>
+  <rect x="724" y="506" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="520" class="field-text">shippingLine1</text>
+  <text x="950" y="520" text-anchor="end" class="field-text">String</text>
+  <rect x="724" y="528" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="542" class="field-text">shippingLine2</text>
+  <text x="950" y="542" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="550" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="564" class="field-text">shippingCity</text>
+  <text x="950" y="564" text-anchor="end" class="field-text">String</text>
+  <rect x="724" y="572" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="586" class="field-text">shippingState</text>
+  <text x="950" y="586" text-anchor="end" class="field-text">String</text>
+  <rect x="724" y="594" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="608" class="field-text">shippingPostal</text>
+  <text x="950" y="608" text-anchor="end" class="field-text">String</text>
+  <rect x="724" y="616" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="630" class="field-text">shippingCountry</text>
+  <text x="950" y="630" text-anchor="end" class="field-text">String</text>
+  <rect x="724" y="638" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="652" class="field-text">🔑 stripeSessionId</text>
+  <text x="950" y="652" text-anchor="end" class="pk">String?</text>
+  <rect x="724" y="660" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="674" class="field-text">🔑 stripePaymentIntentId</text>
+  <text x="950" y="674" text-anchor="end" class="pk">String?</text>
+  <rect x="724" y="682" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="696" class="field-text">createdAt</text>
+  <text x="950" y="696" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="724" y="704" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="718" class="field-text">updatedAt</text>
+  <text x="950" y="718" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="80" y="480" width="240" height="172" class="box"/>
+  <rect x="80" y="480" width="240" height="30" class="header" rx="6"/>
+  <rect x="80" y="504" width="240" height="6" class="header"/>
+  <text x="200" y="500" text-anchor="middle" class="header-text">SavedWork</text>
+  <rect x="84" y="518" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="532" class="field-text">🔑 id</text>
+  <text x="310" y="532" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="540" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="554" class="field-text">🔑 buyerId</text>
+  <text x="310" y="554" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="562" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="576" class="field-text">buyer</text>
+  <text x="310" y="576" text-anchor="end" class="field-text">User</text>
+  <rect x="84" y="584" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="598" class="field-text">🔑 artworkId</text>
+  <text x="310" y="598" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="606" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="620" class="field-text">artwork</text>
+  <text x="310" y="620" text-anchor="end" class="field-text">Artwork</text>
+  <rect x="84" y="628" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="642" class="field-text">createdAt</text>
+  <text x="310" y="642" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="400" y="480" width="240" height="260" class="box"/>
+  <rect x="400" y="480" width="240" height="30" class="header" rx="6"/>
+  <rect x="400" y="504" width="240" height="6" class="header"/>
+  <text x="520" y="500" text-anchor="middle" class="header-text">Offer</text>
+  <rect x="404" y="518" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="532" class="field-text">🔑 id</text>
+  <text x="630" y="532" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="540" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="554" class="field-text">🔑 buyerId</text>
+  <text x="630" y="554" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="562" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="576" class="field-text">buyer</text>
+  <text x="630" y="576" text-anchor="end" class="field-text">User</text>
+  <rect x="404" y="584" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="598" class="field-text">🔑 artworkId</text>
+  <text x="630" y="598" text-anchor="end" class="pk">String</text>
+  <rect x="404" y="606" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="620" class="field-text">artwork</text>
+  <text x="630" y="620" text-anchor="end" class="field-text">Artwork</text>
+  <rect x="404" y="628" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="642" class="field-text">amount</text>
+  <text x="630" y="642" text-anchor="end" class="field-text">Decimal</text>
+  <rect x="404" y="650" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="664" class="field-text">message</text>
+  <text x="630" y="664" text-anchor="end" class="field-text">String?</text>
+  <rect x="404" y="672" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="686" class="field-text">status</text>
+  <text x="630" y="686" text-anchor="end" class="field-text">OfferStatus</text>
+  <rect x="404" y="694" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="410" y="708" class="field-text">createdAt</text>
+  <text x="630" y="708" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="404" y="716" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="410" y="730" class="field-text">updatedAt</text>
+  <text x="630" y="730" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="720" y="480" width="240" height="172" class="box"/>
+  <rect x="720" y="480" width="240" height="30" class="header" rx="6"/>
+  <rect x="720" y="504" width="240" height="6" class="header"/>
+  <text x="840" y="500" text-anchor="middle" class="header-text">ArtworkViewEvent</text>
+  <rect x="724" y="518" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="532" class="field-text">🔑 id</text>
+  <text x="950" y="532" text-anchor="end" class="pk">String</text>
+  <rect x="724" y="540" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="554" class="field-text">🔑 artworkId</text>
+  <text x="950" y="554" text-anchor="end" class="pk">String</text>
+  <rect x="724" y="562" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="576" class="field-text">artwork</text>
+  <text x="950" y="576" text-anchor="end" class="field-text">Artwork</text>
+  <rect x="724" y="584" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="598" class="field-text">ip</text>
+  <text x="950" y="598" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="606" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="730" y="620" class="field-text">userAgent</text>
+  <text x="950" y="620" text-anchor="end" class="field-text">String?</text>
+  <rect x="724" y="628" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="730" y="642" class="field-text">createdAt</text>
+  <text x="950" y="642" text-anchor="end" class="field-text">DateTime</text>
+  <rect x="80" y="690" width="240" height="128" class="box"/>
+  <rect x="80" y="690" width="240" height="30" class="header" rx="6"/>
+  <rect x="80" y="714" width="240" height="6" class="header"/>
+  <text x="200" y="710" text-anchor="middle" class="header-text">PlatformConfig</text>
+  <rect x="84" y="728" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="742" class="field-text">🔑 id</text>
+  <text x="310" y="742" text-anchor="end" class="pk">String</text>
+  <rect x="84" y="750" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="764" class="field-text">commissionRate</text>
+  <text x="310" y="764" text-anchor="end" class="field-text">Decimal</text>
+  <rect x="84" y="772" width="232" height="20" fill="#fff" rx="3"/>
+  <text x="90" y="786" class="field-text">🔑 featuredArtworkId</text>
+  <text x="310" y="786" text-anchor="end" class="pk">String?</text>
+  <rect x="84" y="794" width="232" height="20" fill="#f4f4f8" rx="3"/>
+  <text x="90" y="808" class="field-text">updatedAt</text>
+  <text x="310" y="808" text-anchor="end" class="field-text">DateTime</text>
+</svg>

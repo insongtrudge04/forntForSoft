@@ -1,0 +1,17 @@
+.page { display: flex; flex-direction: column; gap: 1.5rem; }
+.header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.header p { color: var(--color-text-muted); font-size: 0.85rem; }
+.summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.summaryCard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.summaryCard span { font-size: 0.8rem; color: var(--color-text-muted); font-weight: 500; }
+.summaryCard strong { font-size: 1.5rem; font-weight: 700; color: var(--color-accent); }
+.tableWrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; padding: 0.875rem 1rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+.row { border-bottom: 1px solid var(--color-border); transition: background var(--transition-fast); }
+.row:last-child { border-bottom: none; }
+.row:hover { background: var(--color-surface); }
+.row td { padding: 0.875rem 1rem; vertical-align: middle; font-size: 0.9rem; }
+.orderId { font-weight: 600; color: var(--color-text-muted); font-size: 0.8rem; }
+.amount { font-weight: 700; color: var(--color-success); }
+.muted { color: var(--color-text-muted); }

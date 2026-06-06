@@ -1,0 +1,266 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum UserRole {
+  artist
+  buyer
+  admin
+}
+
+enum ArtistStatus {
+  pending
+  approved
+  rejected
+}
+
+enum ArtworkStatus {
+  draft
+  pending_review
+  live
+  sold
+  rejected
+}
+
+enum EditionType {
+  unique
+  limited
+  open
+}
+
+enum Medium {
+  painting
+  sculpture
+  photography
+  print
+  digital
+  drawing
+  mixed_media
+  other
+}
+
+enum OrderStatus {
+  pending
+  paid
+  fulfilled
+  cancelled
+  refunded
+}
+
+enum OfferStatus {
+  pending
+  accepted
+  declined
+  expired
+}
+
+// ─── User ─────────────────────────────────────────────────────────────────────
+
+model User {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique
+  email     String   @unique
+  role      UserRole @default(buyer)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  artistProfile ArtistProfile?
+  buyerProfile  BuyerProfile?
+  orders        Order[]
+  savedWorks    SavedWork[]
+  offers        Offer[]
+
+  @@index([clerkId])
+  @@index([email])
+}
+
+// ─── Artist Profile ───────────────────────────────────────────────────────────
+
+model ArtistProfile {
+  id                String        @id @default(cuid())
+  userId            String        @unique
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  slug              String        @unique
+  displayName       String
+  bio               String?
+  avatarUrl         String?
+  website           String?
+  instagramHandle   String?
+  stripeAccountId   String?       @unique
+  stripeOnboarded   Boolean       @default(false)
+  status            ArtistStatus  @default(pending)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  artworks Artwork[]
+
+  @@index([slug])
+  @@index([status])
+}
+
+// ─── Buyer Profile ────────────────────────────────────────────────────────────
+
+model BuyerProfile {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  displayName     String
+  avatarUrl       String?
+  shippingLine1   String?
+  shippingLine2   String?
+  shippingCity    String?
+  shippingState   String?
+  shippingPostal  String?
+  shippingCountry String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ─── Artwork ──────────────────────────────────────────────────────────────────
+
+model Artwork {
+  id             String        @id @default(cuid())
+  slug           String        @unique
+  title          String
+  description    String?
+  medium         Medium
+  width          Float?
+  height         Float?
+  depth          Float?
+  dimensionUnit  String        @default("cm")
+  year           Int?
+  price          Decimal       @db.Decimal(10, 2)
+  editionType    EditionType   @default(unique)
+  editionTotal   Int?
+  editionNumber  Int?
+  status         ArtworkStatus @default(draft)
+  isFeatured     Boolean       @default(false)
+  viewCount      Int           @default(0)
+  artistId       String
+  artist         ArtistProfile @relation(fields: [artistId], references: [id], onDelete: Cascade)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  images     ArtworkImage[]
+  orders     Order[]
+  savedBy    SavedWork[]
+  offers     Offer[]
+  viewEvents ArtworkViewEvent[]
+
+  @@index([slug])
+  @@index([artistId])
+  @@index([status])
+  @@index([medium])
+  @@index([isFeatured])
+  // Full-text search index — created manually in migration
+}
+
+// ─── Artwork Images ───────────────────────────────────────────────────────────
+
+model ArtworkImage {
+  id        String  @id @default(cuid())
+  artworkId String
+  artwork   Artwork @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  url       String
+  publicId  String  // Cloudinary public_id
+  order     Int     @default(0)
+  width     Int?
+  height    Int?
+
+  @@index([artworkId])
+}
+
+// ─── Orders ───────────────────────────────────────────────────────────────────
+
+model Order {
+  id                    String      @id @default(cuid())
+  buyerId               String
+  buyer                 User        @relation(fields: [buyerId], references: [id])
+  artworkId             String
+  artwork               Artwork     @relation(fields: [artworkId], references: [id])
+  status                OrderStatus @default(pending)
+  subtotal              Decimal     @db.Decimal(10, 2)
+  platformFee           Decimal     @db.Decimal(10, 2)
+  artistPayout          Decimal     @db.Decimal(10, 2)
+  shippingLine1         String
+  shippingLine2         String?
+  shippingCity          String
+  shippingState         String
+  shippingPostal        String
+  shippingCountry       String
+  stripeSessionId       String?     @unique
+  stripePaymentIntentId String?     @unique
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  @@index([buyerId])
+  @@index([artworkId])
+  @@index([status])
+  @@index([stripeSessionId])
+}
+
+// ─── Saved Works (Wishlist) ───────────────────────────────────────────────────
+
+model SavedWork {
+  id        String   @id @default(cuid())
+  buyerId   String
+  buyer     User     @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+  artworkId String
+  artwork   Artwork  @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([buyerId, artworkId])
+  @@index([buyerId])
+  @@index([artworkId])
+}
+
+// ─── Offers ───────────────────────────────────────────────────────────────────
+
+model Offer {
+  id        String      @id @default(cuid())
+  buyerId   String
+  buyer     User        @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+  artworkId String
+  artwork   Artwork     @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  amount    Decimal     @db.Decimal(10, 2)
+  message   String?
+  status    OfferStatus @default(pending)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@index([buyerId])
+  @@index([artworkId])
+  @@index([status])
+}
+
+// ─── Artwork View Events ──────────────────────────────────────────────────────
+
+model ArtworkViewEvent {
+  id        String   @id @default(cuid())
+  artworkId String
+  artwork   Artwork  @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  ip        String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([artworkId])
+  @@index([createdAt])
+}
+
+// ─── Platform Config ──────────────────────────────────────────────────────────
+
+model PlatformConfig {
+  id               String   @id @default("singleton")
+  commissionRate   Decimal  @db.Decimal(5, 4) @default(0.1000)
+  featuredArtworkId String? 
+  updatedAt        DateTime @updatedAt
+}

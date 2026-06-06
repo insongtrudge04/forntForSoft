@@ -1,0 +1,53 @@
+.page { display: flex; flex-direction: column; gap: 1.5rem; }
+.header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.header p { color: var(--color-text-muted); font-size: 0.85rem; }
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.emptyIcon { color: var(--color-text-muted); }
+.empty h2 { font-size: 1.2rem; font-weight: 700; }
+.empty p { color: var(--color-text-secondary); font-size: 0.9rem; max-width: 300px; margin-bottom: 0.5rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.artCard { display: flex; flex-direction: column; position: relative; }
+.thumbWrap { position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; }
+.thumb { width: 100%; height: 100%; transition: transform var(--transition-slow); }
+.artCard:hover .thumb { transform: scale(1.02); }
+
+.heartBtn {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  color: var(--color-error);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.heartBtn:hover { background: rgba(239,68,68,0.1); border-color: var(--color-error); }
+
+.cardInfo { padding: 1rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; justify-content: space-between; }
+.titleRow { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.titleRow h3 { font-size: 0.95rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.artist { font-size: 0.8rem; color: var(--color-text-muted); }
+
+.bottomRow { display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+.price { font-size: 1.1rem; color: var(--color-accent); font-weight: 700; }
+.actions { display: flex; gap: 0.25rem; }

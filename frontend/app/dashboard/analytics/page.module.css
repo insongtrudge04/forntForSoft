@@ -1,0 +1,14 @@
+.page { display: flex; flex-direction: column; gap: 1.5rem; }
+.header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.header p { color: var(--color-text-muted); font-size: 0.85rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+.cardImg { aspect-ratio: 16/9; }
+.cardInfo { padding: 1rem; }
+.cardTitle { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.625rem; }
+.metrics { display: flex; gap: 1rem; }
+.metric { display: flex; align-items: center; gap: 0.3rem; font-size: 0.8rem; color: var(--color-text-muted); }
+.revenue { color: var(--color-success) !important; font-weight: 600; }
+.chartPlaceholder { background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--radius-lg); padding: 4rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; text-align: center; }
+.chartPlaceholder p { font-size: 0.95rem; font-weight: 500; color: var(--color-text-secondary); }
+.chartPlaceholder span { font-size: 0.8rem; color: var(--color-text-muted); }

@@ -1,0 +1,11 @@
+.page { display: flex; flex-direction: column; gap: 1.5rem; max-width: 640px; }
+.header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.header p { color: var(--color-text-muted); font-size: 0.85rem; }
+.sections { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+.section { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.section h2 { font-size: 1rem; font-weight: 700; }
+.sectionDesc { color: var(--color-text-muted); font-size: 0.875rem; }
+.avatarRow { display: flex; align-items: center; gap: 1.25rem; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent)); flex-shrink: 0; }
+.avatarRow p { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.375rem; }
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }

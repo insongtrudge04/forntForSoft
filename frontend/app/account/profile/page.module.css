@@ -1,0 +1,33 @@
+.page { display: flex; flex-direction: column; gap: 1.5rem; max-width: 640px; }
+.header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.header p { color: var(--color-text-muted); font-size: 0.85rem; }
+
+.container { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.section h2 { font-size: 1rem; font-weight: 700; }
+.desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; }
+
+.avatarRow { display: flex; align-items: center; gap: 1rem; }
+.avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
+  flex-shrink: 0;
+}
+.avatarRow h3 { font-size: 1rem; font-weight: 600; }
+.avatarRow p { font-size: 0.85rem; color: var(--color-text-muted); }
+
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+@media (max-width: 480px) {
+  .formGrid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,105 @@
+.page { padding-bottom: 4rem; }
+
+.header {
+  padding: 4rem 0 2rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  margin-bottom: 2.5rem;
+}
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.025em;
+}
+.header p { color: var(--color-text-muted); font-size: 0.9rem; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.filterSection {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.filterSection:last-of-type { border-bottom: none; }
+.filterSection h3 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.875rem;
+}
+
+.searchInput { position: relative; }
+.searchInput svg { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none; }
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.275rem 0;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+  transition: color var(--transition-fast);
+}
+.checkLabel:hover { color: var(--color-text-primary); }
+.checkLabel input { accent-color: var(--color-text-primary); width: 13px; height: 13px; }
+
+.priceInputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.priceInputs span { color: var(--color-text-muted); flex-shrink: 0; font-size: 0.85rem; }
+
+/* Results */
+.resultsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+.resultCount { color: var(--color-text-muted); font-size: 0.85rem; }
+.resultsControls { display: flex; align-items: center; gap: 0.5rem; }
+.viewBtn { padding: 0.4rem !important; }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+.pages { display: flex; gap: 0.25rem; }
+.activePage {
+  background: rgba(0,0,0,0.06) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border-light) !important;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}

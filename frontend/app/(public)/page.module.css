@@ -1,0 +1,265 @@
+.page { overflow-x: hidden; }
+
+/* ─── Hero Strip ────────────────────────────────────────────────────────── */
+.hero {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.heroInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  padding: 2.5rem 0 1.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.heroSub {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.heroStats {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.heroStats strong {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.statDiv {
+  color: var(--color-border);
+}
+
+.sellLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: opacity var(--transition-fast);
+}
+
+.sellLink:hover {
+  opacity: 0.7;
+}
+
+/* ─── Shop Section ──────────────────────────────────────────────────────── */
+.shop {
+  padding: 1.5rem 0 3rem;
+}
+
+/* Top bar */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mediumTabs {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.mediumTab {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.mediumTab:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+}
+
+.activeTab {
+  color: var(--color-primary);
+  background: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
+.topControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.4rem 0.65rem;
+  background: var(--color-bg);
+}
+
+.searchForm svg {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.8rem;
+  color: var(--color-text-primary);
+  width: 140px;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.resultCount {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 3rem 1rem;
+}
+
+.empty a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ─── Pagination ────────────────────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.activePage {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* ─── Artist CTA ─────────────────────────────────────────────────────────── */
+.artistCta {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.ctaCard {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 4rem;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.ctaGlow {
+  position: absolute;
+  top: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.ctaContent p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.ctaFeatures {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ctaFeature {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .heroInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topControls {
+    width: 100%;
+  }
+
+  .searchForm {
+    flex: 1;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .ctaCard {
+    padding: 2.5rem 1.5rem;
+  }
+}

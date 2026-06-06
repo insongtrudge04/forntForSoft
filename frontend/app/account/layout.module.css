@@ -1,0 +1,75 @@
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100dvh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+}
+
+.sidebarTop { padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.sidebarBottom { padding: 1rem; border-top: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 0.75rem; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
+}
+.logo:hover { opacity: 0.85; }
+
+.dividerLine { height: 1px; background: var(--color-border); margin: 0.25rem 0; }
+.sidebarLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0 0.5rem;
+}
+
+.nav { display: flex; flex-direction: column; gap: 0.125rem; }
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.875rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+.navItem:hover { color: var(--color-text-primary); background: var(--color-surface-2); }
+.active {
+  color: var(--color-text-primary);
+  background: var(--color-surface-2);
+}
+
+.navItemSm { font-size: 0.8rem; color: var(--color-text-muted); }
+.userRow { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; }
+.userName { font-size: 0.85rem; font-weight: 500; color: var(--color-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.main { min-height: 100dvh; background: var(--color-bg); }
+.content { padding: 2rem; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+}

@@ -1,0 +1,68 @@
+.page {}
+
+.header {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.profile {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+
+.profileInfo { flex: 1; }
+.name { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; margin-bottom: 0.75rem; font-family: var(--font-display); letter-spacing: -0.02em; }
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+.bio {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.profileActions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.gridHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.gridHeader h2 { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
+.count {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.625rem;
+}
+
+@media (max-width: 640px) {
+  .profile { flex-direction: column; gap: 1.5rem; }
+  .avatar { width: 80px; height: 80px; }
+}

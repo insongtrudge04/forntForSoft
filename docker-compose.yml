@@ -1,0 +1,63 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: artisell_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-artisell}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-artisell_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-artisell_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-artisell}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: artisell_api
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-artisell}:${POSTGRES_PASSWORD:-artisell_secret}@postgres:5432/${POSTGRES_DB:-artisell_db}?schema=public
+      - CLERK_SECRET_KEY=sk_test_U4ZfkT9ASsk6gnJqyH4dIVNCofzjcidJAZ8UyHyOA5
+    volumes:
+      - .:/app
+    command: >
+      sh -c "cd backend && npx prisma generate && npx prisma db push --accept-data-loss && npx tsx prisma/seed.ts && cd .. && npx turbo run dev --filter=api"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: artisell_web
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - PORT=3000
+      - API_URL=http://localhost:3001
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+      - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YWxsb3dpbmctbmV3dC02Ny5jbGVyay5hY2NvdW50cy5kZXYk
+      - CLERK_SECRET_KEY=sk_test_U4ZfkT9ASsk6gnJqyH4dIVNCofzjcidJAZ8UyHyOA5
+      - NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+      - NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+      - NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+      - NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+    volumes:
+      - .:/app
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
